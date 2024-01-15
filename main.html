@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body >
+<navbar>
+    <div class="header">
+    Welcome to our store
+    </div>
+    <div class="name"></div>
+    <div class="navbar">
+        <div class="nav-menu">
+        <a class="nav-item" href="#">Home</a>
+        <a class="nav-item" href="#">About Us</a>
+        <a class="nav-item" href="#">Contact Us</a>
+    </div>
+        <div class="hamburger">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+    </div>
+</navbar>
+</body>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navmenu = document.querySelector(".nav-menu");
+        //const navmenubg = document.querySelector(".nav-menu::before");
+        hamburger.addEventListener("click",()=>{
+            hamburger.classList.toggle("active");
+            navmenu.classList.toggle("active");
+           // navmenubg.classList.toggle("active");
+        })
+        document.querySelectorAll(".nav-item").forEach(n=>n.addEventListener("click",()=>{
+            hamburger.classList.remove("active");
+            navmenu.classList.remove("active");
+           // navmenubg.classList.remove("active");
+        }))
+    </script>
+</html>
